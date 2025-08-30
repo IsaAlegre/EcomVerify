@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+# Importa tu predictor
+from ml.predictor import predecir_ecommerce
+
 app = FastAPI()
 
-# Esquema de entrada para analizar un ecommerce
 class EcommerceInput(BaseModel):
     url: str
 
@@ -13,5 +15,5 @@ def read_root():
 
 @app.post("/analizar/")
 def analizar_ecommerce(data: EcommerceInput):
-    # Aquí irá la lógica para analizar la URL (por ahora, solo devuelve la URL recibida)
-    return {"url_recibida": data.url, "resultado": "pendiente de análisis"}
+    resultado = predecir_ecommerce(data.url)
+    return {"url_recibida": data.url, "resultado": resultado}
