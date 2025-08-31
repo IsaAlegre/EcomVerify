@@ -1,18 +1,6 @@
-<<<<<<< HEAD
-# Ignorar entorno virtual
-venv/
-
-# Ignorar archivos de Python compilados
-__pycache__/
-*.pyc
-
-# Ignorar archivos de configuración de entorno
-.env
-=======
 venv/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .env
->>>>>>> ab5d32d8e92665faeb4ae1e96f884e76c8a0e113
